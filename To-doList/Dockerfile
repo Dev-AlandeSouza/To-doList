@@ -13,10 +13,6 @@ FROM openjdk:17-jdk-slim
 
 EXPOSE 8080
 
-<<<<<<< HEAD
 COPY --from=build /target/*.jar app.jar
-=======
-COPY --from=build /target/To-doList-1.0.0.jar app.jar
->>>>>>> 5d992af3590e3ae9fbb0962b7d4e47556043b55d
 
 ENTRYPOINT ["java", "-jar", "app.jar"]
