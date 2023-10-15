@@ -3,6 +3,9 @@ FROM ubuntu:latest AS build
 RUN apt-get update
 RUN apt-get install openjdk-17-jdk -y
 
+ADD ./pom.xml pom.xml
+ADD ./src src/
+
 COPY . .
 
 RUN apt-get install maven -y
