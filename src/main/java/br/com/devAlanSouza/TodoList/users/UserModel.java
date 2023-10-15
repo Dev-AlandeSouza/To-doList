@@ -11,21 +11,18 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import lombok.Data;
 
-
-//getters e setters
 @Data
-@Entity(name= "tb_users")
+@Entity(name = "tb_users")
 public class UserModel {
+  @Id
+  @GeneratedValue(generator = "UUID")
+  private UUID id;
 
-   @Id
-   @GeneratedValue(generator = "UUID")
-   private UUID id;
+  @Column(unique = true)
+  private String username;
+  private String name;
+  private String password;
 
-   @Column(unique = true)
-   private String username;
-   private String name;
-   private String password;
-
-   @CreationTimestamp
-   private LocalDateTime createdAt;
+  @CreationTimestamp
+  private LocalDateTime createdAt;
 }
